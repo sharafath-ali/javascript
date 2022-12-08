@@ -656,5 +656,156 @@ function total(tax,price)
 }
 var topay=total(tax,price)
 console.log("total price:",topay)
+var target=9
+var nums=[0,1,2,3]
+var lengt=nums.length;
+var aa=[]
+function add(nums,target){
+   for(i=0;i<lengt;i++)
+   {
+       for(j=0;j<lengt;j++)
+       {  if(nums[i]+nums[j]==target){
+          if(i!==j){
+             return [i,j]
+          }
+       }
+       }
+   }
+}
+
+aa.push[i,j]=add(nums,target);
+console.log(aa)
 
 
+//   class Animal { /* ...class code here... */}
+//   class Bird extends Animal { /* ...class code here... */ }
+//   class Eagle extends Bird { /* ...class code here... */ }
+/* OOP Principles: Encapsulation
+In the simplest terms, encapsulation has to do with making a code implementation "hidden" from other users, in the sense that they don't have to know how my code works in order to "consume" the code.
+
+example= "abc".Touppercase() 
+no needed to worries about the uppercase() method
+*/   
+
+/*
+
+
+
+OOP Principles: Polymorphism
+Polymorphism is a word derived from the Greek language meaning "multiple forms". An alternative translation might be: "something that can take on many shapes".
+
+So, to understand what polymorphism is about, let's consider some real-life objects.
+
+A door has a bell. It could be said that the bell is a property of the door object. This bell can be rung. When would someone ring a bell on the door? Obviously, to get someone to show up at the door.
+
+Now consider a bell on a bicycle. A bicycle has a bell. It could be said that the bell is a property of the bicycle object. This bell could also be rung. However, the reason, the intention, and the result of somebody ringing the bell on a bicycle is not the same as ringing the bell on a door.
+
+
+*/
+
+const bicycle = {
+   bell: function() {
+       return "Ring, ring! Watch out, please!"
+   }
+}
+const door = {
+   bell: function() {
+       return 5//"Ring, ring! Come here, please!"
+   }
+}
+var ff=door.bell()
+//console.log(ff)
+
+//polymoric way
+function ringTheBell(thing) {
+   console.log(thing.bell())
+}
+ringTheBell(bicycle)
+
+
+
+//poly meta
+
+
+class motorcycle {
+   startengine(){
+       console.log("engine is started")
+   }
+}
+class bullet extends motorcycle{
+   startengine(){
+       super.startengine()
+       console.log("loud sound will produce")
+   }
+}
+class activa extends motorcycle{
+   startengine(){
+       console.log("less sound is produce")
+   }
+}
+var peopleloveitbeofsound= new bullet()
+var peopleloveitbeofmil=new activa()
+peopleloveitbeofmil.startengine()
+peopleloveitbeofsound.startengine()
+
+
+//prototype in javascript
+//it is the model for other objects
+
+var bird={
+   havefeather:true,
+   canfly:true,
+   havewings:true,
+}
+// here bird is the prototype
+
+var Eagle1 = Object.create(bird)
+console.log("eagle1:",Eagle1)
+console.log("Eagle1.canfly:",Eagle1.canfly)
+console.log("Eagle1.haveWings:",Eagle1.havewings)
+
+
+var hen= Object.create(bird)
+hen.canfly=false;
+console.log(hen)
+console.log("hen.canfly:",hen.canfly)
+
+
+//it better to use class as prototype
+
+//native object with constructor
+const ggg=new Date()
+consoleLog(ggg)
+consoleLog(ggg)
+
+//native object without constructor
+console.log(Math.PI)
+consoleLog(Math.pow(2,3))
+favor1="g";
+consoleLog(favor1)
+
+//custom constractor
+
+   function icecream(favor) {
+      this.favor=favor;
+      this.melted= function(){
+         console.log('the' ,this.favor,'icecream has melted')
+      }
+   }
+   var kiwwi=new icecream("kiwwi");
+   kiwwi.melted();
+   var vanila=new icecream("vanila")
+   vanila.melted()
+
+/*In other words, if you compare new String('plum') === new String('plum'), you'll get back false, while "plum" === "plum" returns true. You're getting the false when comparing objects because it is not the values that you pass to the constructor that are being compared, but rather the memory location where objects are saved.
+
+new Date();
+new Error();
+new Map();
+new Promise();
+new Set();
+new WeakSet();
+new WeakMap();
+
+
+*/
